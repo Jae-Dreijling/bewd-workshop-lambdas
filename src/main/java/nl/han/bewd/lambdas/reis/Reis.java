@@ -16,7 +16,8 @@ public class Reis {
     }
 
     public void simuleerReis(VervoerStrategy vervoer) {
-        // Teken het geheugenmodel op dit moment
+        // Teken het geheugenmodel op dit moment (dit nog op papier doen!!
+        // TO-DO
         System.out.println("Reis " + getSpitsText() + ", duurt " + vervoer.berekenReistijd(isSpits()) + " minuten");
     }
 

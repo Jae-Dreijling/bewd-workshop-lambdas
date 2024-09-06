@@ -18,7 +18,7 @@ public class Main {
 
         
         System.out.println("Tijdens de spits");
-        
+        // spits bestaan nu
         mijnReis.setSpits(true);
         mijnReis.simuleerReis(vervoer);                   // Met fiets
         mijnReis.simuleerReis(new AutoVervoerStrategy()); // Met auto
