@@ -13,8 +13,23 @@ public class Main {
         Reis mijnReis = new Reis(false);
         //maakt nieuwe class FietsVervoerStrategy aan
         VervoerStrategy vervoer = new FietsVervoerStrategy();
+
+        VervoerStrategy teleport = new teleportVervoerStrategy();
+
+        VervoerStrategy ren = (isReisTijdensSpits) -> {
+            if(isReisTijdensSpits){
+                return 70;
+            }else {
+                return 80;
+            }
+        };
+
+
         //roept de methode simuleerReis aan met de parameter vervoer
         mijnReis.simuleerReis(vervoer);
+        mijnReis.simuleerReis(teleport);
+        mijnReis.simuleerReis(ren);
+
 
         
         System.out.println("Tijdens de spits");
@@ -23,6 +38,7 @@ public class Main {
         mijnReis.simuleerReis(vervoer);                   // Met fiets
         mijnReis.simuleerReis(new AutoVervoerStrategy()); // Met auto
         mijnReis.simuleerReis(new OVVervoerStrategy());   // Met OV
+        mijnReis.simuleerReis(teleport);
 
         System.out.println("Met <nieuw> vervoer (Stap 2)  ");
         System.out.println("TODO:");
